@@ -1,4 +1,5 @@
 // Grade Calculator: average score and grade for each student
+#include <limits>
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -33,13 +34,13 @@ bool readScore(int scoreNumber, int &score) {
                 return false;
             }
             cin.clear();
-            cin.ignore(1000, '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid score. Enter a value from 0 to 100." << endl;
         } else if (score < MIN_SCORE || score > MAX_SCORE) {
-            cin.ignore(1000, '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid score. Enter a value from 0 to 100." << endl;
         } else {
-            cin.ignore(1000, '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return true;
         }
     }
